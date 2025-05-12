@@ -1,0 +1,519 @@
+super-resolution/
+├─ backend/
+│  ├─ model/
+│  ├─ static/
+│  │  ├─ inputs/
+│  │  └─ outputs/
+│  ├─ .gitignore
+│  ├─ main.py
+│  └─ requirements.txt
+├─ frontend/
+│  └─ .gitignore
+├─ models/
+│  └─ realesrgan/
+│     ├─ .eggs/
+│     │  ├─ cython-3.1.0-py3.10-win-amd64.egg/
+│     │  │  ├─ Cython/
+│     │  │  │  ├─ __pycache__/
+│     │  │  │  │  ├─ __init__.cpython-310.pyc
+│     │  │  │  │  └─ Shadow.cpython-310.pyc
+│     │  │  │  ├─ Build/
+│     │  │  │  │  ├─ Tests/
+│     │  │  │  │  │  ├─ __init__.py
+│     │  │  │  │  │  ├─ TestCyCache.py
+│     │  │  │  │  │  ├─ TestCythonizeArgsParser.py
+│     │  │  │  │  │  ├─ TestDependencies.py
+│     │  │  │  │  │  ├─ TestInline.py
+│     │  │  │  │  │  ├─ TestIpythonMagic.py
+│     │  │  │  │  │  ├─ TestRecythonize.py
+│     │  │  │  │  │  └─ TestStripLiterals.py
+│     │  │  │  │  ├─ __init__.py
+│     │  │  │  │  ├─ BuildExecutable.py
+│     │  │  │  │  ├─ Cache.py
+│     │  │  │  │  ├─ Cythonize.py
+│     │  │  │  │  ├─ Dependencies.py
+│     │  │  │  │  ├─ Distutils.py
+│     │  │  │  │  ├─ Inline.py
+│     │  │  │  │  ├─ IpythonMagic.py
+│     │  │  │  │  └─ SharedModule.py
+│     │  │  │  ├─ Compiler/
+│     │  │  │  │  ├─ __pycache__/
+│     │  │  │  │  │  ├─ __init__.cpython-310.pyc
+│     │  │  │  │  │  ├─ CmdLine.cpython-310.pyc
+│     │  │  │  │  │  ├─ DebugFlags.cpython-310.pyc
+│     │  │  │  │  │  ├─ Errors.cpython-310.pyc
+│     │  │  │  │  │  ├─ Future.cpython-310.pyc
+│     │  │  │  │  │  ├─ Lexicon.cpython-310.pyc
+│     │  │  │  │  │  ├─ Main.cpython-310.pyc
+│     │  │  │  │  │  ├─ Naming.cpython-310.pyc
+│     │  │  │  │  │  ├─ Options.cpython-310.pyc
+│     │  │  │  │  │  ├─ PyrexTypes.cpython-310.pyc
+│     │  │  │  │  │  ├─ StringEncoding.cpython-310.pyc
+│     │  │  │  │  │  ├─ Symtab.cpython-310.pyc
+│     │  │  │  │  │  └─ TypeSlots.cpython-310.pyc
+│     │  │  │  │  ├─ Tests/
+│     │  │  │  │  │  ├─ __init__.py
+│     │  │  │  │  │  ├─ TestBuffer.py
+│     │  │  │  │  │  ├─ TestBuiltin.py
+│     │  │  │  │  │  ├─ TestCmdLine.py
+│     │  │  │  │  │  ├─ TestCode.py
+│     │  │  │  │  │  ├─ TestFlowControl.py
+│     │  │  │  │  │  ├─ TestGrammar.py
+│     │  │  │  │  │  ├─ TestMemView.py
+│     │  │  │  │  │  ├─ TestParseTreeTransforms.py
+│     │  │  │  │  │  ├─ TestScanning.py
+│     │  │  │  │  │  ├─ TestSignatureMatching.py
+│     │  │  │  │  │  ├─ TestStringEncoding.py
+│     │  │  │  │  │  ├─ TestTreeFragment.py
+│     │  │  │  │  │  ├─ TestTreePath.py
+│     │  │  │  │  │  ├─ TestTypes.py
+│     │  │  │  │  │  ├─ TestUtilityLoad.py
+│     │  │  │  │  │  ├─ TestVisitor.py
+│     │  │  │  │  │  └─ Utils.py
+│     │  │  │  │  ├─ __init__.py
+│     │  │  │  │  ├─ AnalysedTreeTransforms.py
+│     │  │  │  │  ├─ Annotate.py
+│     │  │  │  │  ├─ AutoDocTransforms.py
+│     │  │  │  │  ├─ Buffer.py
+│     │  │  │  │  ├─ Builtin.py
+│     │  │  │  │  ├─ CmdLine.py
+│     │  │  │  │  ├─ Code.cp310-win_amd64.pyd
+│     │  │  │  │  ├─ Code.pxd
+│     │  │  │  │  ├─ Code.py
+│     │  │  │  │  ├─ CodeGeneration.py
+│     │  │  │  │  ├─ CythonScope.py
+│     │  │  │  │  ├─ Dataclass.py
+│     │  │  │  │  ├─ DebugFlags.py
+│     │  │  │  │  ├─ Errors.py
+│     │  │  │  │  ├─ ExprNodes.py
+│     │  │  │  │  ├─ FlowControl.cp310-win_amd64.pyd
+│     │  │  │  │  ├─ FlowControl.pxd
+│     │  │  │  │  ├─ FlowControl.py
+│     │  │  │  │  ├─ FusedNode.cp310-win_amd64.pyd
+│     │  │  │  │  ├─ FusedNode.py
+│     │  │  │  │  ├─ Future.py
+│     │  │  │  │  ├─ Interpreter.py
+│     │  │  │  │  ├─ Lexicon.py
+│     │  │  │  │  ├─ LineTable.cp310-win_amd64.pyd
+│     │  │  │  │  ├─ LineTable.py
+│     │  │  │  │  ├─ Main.py
+│     │  │  │  │  ├─ MatchCaseNodes.py
+│     │  │  │  │  ├─ MemoryView.py
+│     │  │  │  │  ├─ ModuleNode.py
+│     │  │  │  │  ├─ Naming.py
+│     │  │  │  │  ├─ Nodes.py
+│     │  │  │  │  ├─ Optimize.py
+│     │  │  │  │  ├─ Options.py
+│     │  │  │  │  ├─ ParseTreeTransforms.pxd
+│     │  │  │  │  ├─ ParseTreeTransforms.py
+│     │  │  │  │  ├─ Parsing.cp310-win_amd64.pyd
+│     │  │  │  │  ├─ Parsing.pxd
+│     │  │  │  │  ├─ Parsing.py
+│     │  │  │  │  ├─ Pipeline.py
+│     │  │  │  │  ├─ PyrexTypes.py
+│     │  │  │  │  ├─ Pythran.py
+│     │  │  │  │  ├─ Scanning.cp310-win_amd64.pyd
+│     │  │  │  │  ├─ Scanning.pxd
+│     │  │  │  │  ├─ Scanning.py
+│     │  │  │  │  ├─ StringEncoding.py
+│     │  │  │  │  ├─ Symtab.py
+│     │  │  │  │  ├─ TreeFragment.py
+│     │  │  │  │  ├─ TreePath.py
+│     │  │  │  │  ├─ TypeInference.py
+│     │  │  │  │  ├─ TypeSlots.py
+│     │  │  │  │  ├─ UFuncs.py
+│     │  │  │  │  ├─ UtilityCode.py
+│     │  │  │  │  ├─ UtilNodes.py
+│     │  │  │  │  ├─ Version.py
+│     │  │  │  │  ├─ Visitor.cp310-win_amd64.pyd
+│     │  │  │  │  ├─ Visitor.pxd
+│     │  │  │  │  └─ Visitor.py
+│     │  │  │  ├─ Debugger/
+│     │  │  │  │  ├─ Tests/
+│     │  │  │  │  │  ├─ __init__.py
+│     │  │  │  │  │  ├─ cfuncs.c
+│     │  │  │  │  │  ├─ codefile
+│     │  │  │  │  │  ├─ test_libcython_in_gdb.py
+│     │  │  │  │  │  ├─ test_libpython_in_gdb.py
+│     │  │  │  │  │  └─ TestLibCython.py
+│     │  │  │  │  ├─ __init__.py
+│     │  │  │  │  ├─ Cygdb.py
+│     │  │  │  │  ├─ DebugWriter.py
+│     │  │  │  │  ├─ libcython.py
+│     │  │  │  │  └─ libpython.py
+│     │  │  │  ├─ Distutils/
+│     │  │  │  │  ├─ __pycache__/
+│     │  │  │  │  │  ├─ __init__.cpython-310.pyc
+│     │  │  │  │  │  ├─ build_ext.cpython-310.pyc
+│     │  │  │  │  │  └─ extension.cpython-310.pyc
+│     │  │  │  │  ├─ __init__.py
+│     │  │  │  │  ├─ build_ext.py
+│     │  │  │  │  ├─ extension.py
+│     │  │  │  │  └─ old_build_ext.py
+│     │  │  │  ├─ Includes/
+│     │  │  │  │  ├─ cpython/
+│     │  │  │  │  │  ├─ __init__.pxd
+│     │  │  │  │  │  ├─ array.pxd
+│     │  │  │  │  │  ├─ bool.pxd
+│     │  │  │  │  │  ├─ buffer.pxd
+│     │  │  │  │  │  ├─ bytearray.pxd
+│     │  │  │  │  │  ├─ bytes.pxd
+│     │  │  │  │  │  ├─ cellobject.pxd
+│     │  │  │  │  │  ├─ ceval.pxd
+│     │  │  │  │  │  ├─ codecs.pxd
+│     │  │  │  │  │  ├─ complex.pxd
+│     │  │  │  │  │  ├─ contextvars.pxd
+│     │  │  │  │  │  ├─ conversion.pxd
+│     │  │  │  │  │  ├─ datetime.pxd
+│     │  │  │  │  │  ├─ descr.pxd
+│     │  │  │  │  │  ├─ dict.pxd
+│     │  │  │  │  │  ├─ exc.pxd
+│     │  │  │  │  │  ├─ fileobject.pxd
+│     │  │  │  │  │  ├─ float.pxd
+│     │  │  │  │  │  ├─ function.pxd
+│     │  │  │  │  │  ├─ genobject.pxd
+│     │  │  │  │  │  ├─ getargs.pxd
+│     │  │  │  │  │  ├─ instance.pxd
+│     │  │  │  │  │  ├─ iterator.pxd
+│     │  │  │  │  │  ├─ iterobject.pxd
+│     │  │  │  │  │  ├─ list.pxd
+│     │  │  │  │  │  ├─ long.pxd
+│     │  │  │  │  │  ├─ longintrepr.pxd
+│     │  │  │  │  │  ├─ mapping.pxd
+│     │  │  │  │  │  ├─ marshal.pxd
+│     │  │  │  │  │  ├─ mem.pxd
+│     │  │  │  │  │  ├─ memoryview.pxd
+│     │  │  │  │  │  ├─ method.pxd
+│     │  │  │  │  │  ├─ module.pxd
+│     │  │  │  │  │  ├─ number.pxd
+│     │  │  │  │  │  ├─ object.pxd
+│     │  │  │  │  │  ├─ pycapsule.pxd
+│     │  │  │  │  │  ├─ pylifecycle.pxd
+│     │  │  │  │  │  ├─ pyport.pxd
+│     │  │  │  │  │  ├─ pystate.pxd
+│     │  │  │  │  │  ├─ pythread.pxd
+│     │  │  │  │  │  ├─ ref.pxd
+│     │  │  │  │  │  ├─ sequence.pxd
+│     │  │  │  │  │  ├─ set.pxd
+│     │  │  │  │  │  ├─ slice.pxd
+│     │  │  │  │  │  ├─ time.pxd
+│     │  │  │  │  │  ├─ tuple.pxd
+│     │  │  │  │  │  ├─ type.pxd
+│     │  │  │  │  │  ├─ unicode.pxd
+│     │  │  │  │  │  ├─ version.pxd
+│     │  │  │  │  │  └─ weakref.pxd
+│     │  │  │  │  ├─ libc/
+│     │  │  │  │  │  ├─ __init__.pxd
+│     │  │  │  │  │  ├─ complex.pxd
+│     │  │  │  │  │  ├─ errno.pxd
+│     │  │  │  │  │  ├─ float.pxd
+│     │  │  │  │  │  ├─ limits.pxd
+│     │  │  │  │  │  ├─ locale.pxd
+│     │  │  │  │  │  ├─ math.pxd
+│     │  │  │  │  │  ├─ setjmp.pxd
+│     │  │  │  │  │  ├─ signal.pxd
+│     │  │  │  │  │  ├─ stddef.pxd
+│     │  │  │  │  │  ├─ stdint.pxd
+│     │  │  │  │  │  ├─ stdio.pxd
+│     │  │  │  │  │  ├─ stdlib.pxd
+│     │  │  │  │  │  ├─ string.pxd
+│     │  │  │  │  │  ├─ threads.pxd
+│     │  │  │  │  │  └─ time.pxd
+│     │  │  │  │  ├─ libcpp/
+│     │  │  │  │  │  ├─ __init__.pxd
+│     │  │  │  │  │  ├─ algorithm.pxd
+│     │  │  │  │  │  ├─ any.pxd
+│     │  │  │  │  │  ├─ atomic.pxd
+│     │  │  │  │  │  ├─ barrier.pxd
+│     │  │  │  │  │  ├─ bit.pxd
+│     │  │  │  │  │  ├─ cast.pxd
+│     │  │  │  │  │  ├─ cmath.pxd
+│     │  │  │  │  │  ├─ complex.pxd
+│     │  │  │  │  │  ├─ deque.pxd
+│     │  │  │  │  │  ├─ exception.pxd
+│     │  │  │  │  │  ├─ execution.pxd
+│     │  │  │  │  │  ├─ forward_list.pxd
+│     │  │  │  │  │  ├─ functional.pxd
+│     │  │  │  │  │  ├─ future.pxd
+│     │  │  │  │  │  ├─ iterator.pxd
+│     │  │  │  │  │  ├─ latch.pxd
+│     │  │  │  │  │  ├─ limits.pxd
+│     │  │  │  │  │  ├─ list.pxd
+│     │  │  │  │  │  ├─ map.pxd
+│     │  │  │  │  │  ├─ memory.pxd
+│     │  │  │  │  │  ├─ mutex.pxd
+│     │  │  │  │  │  ├─ numbers.pxd
+│     │  │  │  │  │  ├─ numeric.pxd
+│     │  │  │  │  │  ├─ optional.pxd
+│     │  │  │  │  │  ├─ pair.pxd
+│     │  │  │  │  │  ├─ queue.pxd
+│     │  │  │  │  │  ├─ random.pxd
+│     │  │  │  │  │  ├─ semaphore.pxd
+│     │  │  │  │  │  ├─ set.pxd
+│     │  │  │  │  │  ├─ shared_mutex.pxd
+│     │  │  │  │  │  ├─ span.pxd
+│     │  │  │  │  │  ├─ stack.pxd
+│     │  │  │  │  │  ├─ stop_token.pxd
+│     │  │  │  │  │  ├─ string_view.pxd
+│     │  │  │  │  │  ├─ string.pxd
+│     │  │  │  │  │  ├─ typeindex.pxd
+│     │  │  │  │  │  ├─ typeinfo.pxd
+│     │  │  │  │  │  ├─ unordered_map.pxd
+│     │  │  │  │  │  ├─ unordered_set.pxd
+│     │  │  │  │  │  ├─ utility.pxd
+│     │  │  │  │  │  └─ vector.pxd
+│     │  │  │  │  ├─ posix/
+│     │  │  │  │  │  ├─ __init__.pxd
+│     │  │  │  │  │  ├─ dlfcn.pxd
+│     │  │  │  │  │  ├─ fcntl.pxd
+│     │  │  │  │  │  ├─ ioctl.pxd
+│     │  │  │  │  │  ├─ mman.pxd
+│     │  │  │  │  │  ├─ resource.pxd
+│     │  │  │  │  │  ├─ select.pxd
+│     │  │  │  │  │  ├─ signal.pxd
+│     │  │  │  │  │  ├─ stat.pxd
+│     │  │  │  │  │  ├─ stdio.pxd
+│     │  │  │  │  │  ├─ stdlib.pxd
+│     │  │  │  │  │  ├─ strings.pxd
+│     │  │  │  │  │  ├─ time.pxd
+│     │  │  │  │  │  ├─ types.pxd
+│     │  │  │  │  │  ├─ uio.pxd
+│     │  │  │  │  │  ├─ unistd.pxd
+│     │  │  │  │  │  └─ wait.pxd
+│     │  │  │  │  └─ openmp.pxd
+│     │  │  │  ├─ Plex/
+│     │  │  │  │  ├─ __pycache__/
+│     │  │  │  │  │  ├─ __init__.cpython-310.pyc
+│     │  │  │  │  │  ├─ Errors.cpython-310.pyc
+│     │  │  │  │  │  ├─ Lexicons.cpython-310.pyc
+│     │  │  │  │  │  └─ Regexps.cpython-310.pyc
+│     │  │  │  │  ├─ __init__.py
+│     │  │  │  │  ├─ Actions.cp310-win_amd64.pyd
+│     │  │  │  │  ├─ Actions.pxd
+│     │  │  │  │  ├─ Actions.py
+│     │  │  │  │  ├─ DFA.cp310-win_amd64.pyd
+│     │  │  │  │  ├─ DFA.pxd
+│     │  │  │  │  ├─ DFA.py
+│     │  │  │  │  ├─ Errors.py
+│     │  │  │  │  ├─ Lexicons.py
+│     │  │  │  │  ├─ Machines.cp310-win_amd64.pyd
+│     │  │  │  │  ├─ Machines.pxd
+│     │  │  │  │  ├─ Machines.py
+│     │  │  │  │  ├─ Regexps.py
+│     │  │  │  │  ├─ Scanners.cp310-win_amd64.pyd
+│     │  │  │  │  ├─ Scanners.pxd
+│     │  │  │  │  ├─ Scanners.py
+│     │  │  │  │  ├─ Transitions.cp310-win_amd64.pyd
+│     │  │  │  │  ├─ Transitions.pxd
+│     │  │  │  │  └─ Transitions.py
+│     │  │  │  ├─ Runtime/
+│     │  │  │  │  ├─ __init__.py
+│     │  │  │  │  ├─ refnanny.cp310-win_amd64.pyd
+│     │  │  │  │  └─ refnanny.pyx
+│     │  │  │  ├─ Tempita/
+│     │  │  │  │  ├─ __init__.py
+│     │  │  │  │  ├─ _looper.py
+│     │  │  │  │  ├─ _tempita.cp310-win_amd64.pyd
+│     │  │  │  │  └─ _tempita.py
+│     │  │  │  ├─ Tests/
+│     │  │  │  │  ├─ __init__.py
+│     │  │  │  │  ├─ TestCodeWriter.py
+│     │  │  │  │  ├─ TestCythonUtils.py
+│     │  │  │  │  ├─ TestJediTyper.py
+│     │  │  │  │  ├─ TestShadow.py
+│     │  │  │  │  ├─ TestStringIOTree.py
+│     │  │  │  │  ├─ TestTestUtils.py
+│     │  │  │  │  └─ xmlrunner.py
+│     │  │  │  ├─ Utility/
+│     │  │  │  │  ├─ __init__.py
+│     │  │  │  │  ├─ arrayarray.h
+│     │  │  │  │  ├─ AsyncGen.c
+│     │  │  │  │  ├─ Buffer.c
+│     │  │  │  │  ├─ BufferFormatFromTypeInfo.pxd
+│     │  │  │  │  ├─ Builtins.c
+│     │  │  │  │  ├─ CConvert.pyx
+│     │  │  │  │  ├─ CMath.c
+│     │  │  │  │  ├─ CommonStructures.c
+│     │  │  │  │  ├─ Complex.c
+│     │  │  │  │  ├─ Coroutine.c
+│     │  │  │  │  ├─ CpdefEnums.pyx
+│     │  │  │  │  ├─ CppConvert.pyx
+│     │  │  │  │  ├─ CppSupport.cpp
+│     │  │  │  │  ├─ CythonFunction.c
+│     │  │  │  │  ├─ Dataclasses.c
+│     │  │  │  │  ├─ Dataclasses.py
+│     │  │  │  │  ├─ Embed.c
+│     │  │  │  │  ├─ Exceptions.c
+│     │  │  │  │  ├─ ExtensionTypes.c
+│     │  │  │  │  ├─ FunctionArguments.c
+│     │  │  │  │  ├─ ImportExport.c
+│     │  │  │  │  ├─ Lock.c
+│     │  │  │  │  ├─ MemoryView_C.c
+│     │  │  │  │  ├─ MemoryView.pxd
+│     │  │  │  │  ├─ MemoryView.pyx
+│     │  │  │  │  ├─ ModuleSetupCode.c
+│     │  │  │  │  ├─ NumpyImportArray.c
+│     │  │  │  │  ├─ ObjectHandling.c
+│     │  │  │  │  ├─ Optimize.c
+│     │  │  │  │  ├─ Overflow.c
+│     │  │  │  │  ├─ Printing.c
+│     │  │  │  │  ├─ Profile.c
+│     │  │  │  │  ├─ StringTools.c
+│     │  │  │  │  ├─ TestCythonScope.pyx
+│     │  │  │  │  ├─ TestCyUtilityLoader.pyx
+│     │  │  │  │  ├─ TestUtilityLoader.c
+│     │  │  │  │  ├─ TypeConversion.c
+│     │  │  │  │  ├─ UFuncs_C.c
+│     │  │  │  │  └─ UFuncs.pyx
+│     │  │  │  ├─ __init__.py
+│     │  │  │  ├─ __init__.pyi
+│     │  │  │  ├─ CodeWriter.py
+│     │  │  │  ├─ Coverage.py
+│     │  │  │  ├─ Debugging.py
+│     │  │  │  ├─ py.typed
+│     │  │  │  ├─ Shadow.py
+│     │  │  │  ├─ Shadow.pyi
+│     │  │  │  ├─ StringIOTree.cp310-win_amd64.pyd
+│     │  │  │  ├─ StringIOTree.py
+│     │  │  │  ├─ TestUtils.py
+│     │  │  │  ├─ Utils.cp310-win_amd64.pyd
+│     │  │  │  └─ Utils.py
+│     │  │  ├─ EGG-INFO/
+│     │  │  │  ├─ licenses/
+│     │  │  │  │  ├─ COPYING.txt
+│     │  │  │  │  └─ LICENSE.txt
+│     │  │  │  ├─ entry_points.txt
+│     │  │  │  ├─ PKG-INFO
+│     │  │  │  ├─ RECORD
+│     │  │  │  ├─ top_level.txt
+│     │  │  │  └─ WHEEL
+│     │  │  ├─ pyximport/
+│     │  │  │  ├─ __init__.py
+│     │  │  │  ├─ pyxbuild.py
+│     │  │  │  └─ pyximport.py
+│     │  │  └─ cython.py
+│     │  └─ README.txt
+│     ├─ .github/
+│     │  └─ workflows/
+│     │     ├─ publish-pip.yml
+│     │     ├─ pylint.yml
+│     │     └─ release.yml
+│     ├─ .vscode/
+│     │  └─ settings.json
+│     ├─ assets/
+│     │  ├─ realesrgan_logo_ai.png
+│     │  ├─ realesrgan_logo_av.png
+│     │  ├─ realesrgan_logo_gi.png
+│     │  ├─ realesrgan_logo_gv.png
+│     │  ├─ realesrgan_logo.png
+│     │  ├─ teaser-text.png
+│     │  └─ teaser.jpg
+│     ├─ docs/
+│     │  ├─ anime_comparisons_CN.md
+│     │  ├─ anime_comparisons.md
+│     │  ├─ anime_model.md
+│     │  ├─ anime_video_model.md
+│     │  ├─ CONTRIBUTING.md
+│     │  ├─ FAQ.md
+│     │  ├─ feedback.md
+│     │  ├─ model_zoo.md
+│     │  ├─ ncnn_conversion.md
+│     │  ├─ Training_CN.md
+│     │  └─ Training.md
+│     ├─ experiments/
+│     │  └─ pretrained_models/
+│     │     └─ README.md
+│     ├─ inputs/
+│     │  ├─ video/
+│     │  │  └─ onepiece_demo.mp4
+│     │  ├─ 00003.png
+│     │  ├─ 00017_gray.png
+│     │  ├─ 0014.jpg
+│     │  ├─ 0030.jpg
+│     │  ├─ ADE_val_00000114.jpg
+│     │  ├─ children-alpha.png
+│     │  ├─ OST_009.png
+│     │  ├─ tree_alpha_16bit.png
+│     │  └─ wolf_gray.jpg
+│     ├─ options/
+│     │  ├─ finetune_realesrgan_x4plus_pairdata.yml
+│     │  ├─ finetune_realesrgan_x4plus.yml
+│     │  ├─ train_realesrgan_x2plus.yml
+│     │  ├─ train_realesrgan_x4plus.yml
+│     │  ├─ train_realesrnet_x2plus.yml
+│     │  └─ train_realesrnet_x4plus.yml
+│     ├─ realesrgan/
+│     │  ├─ archs/
+│     │  │  ├─ __init__.py
+│     │  │  ├─ discriminator_arch.py
+│     │  │  └─ srvgg_arch.py
+│     │  ├─ data/
+│     │  │  ├─ __init__.py
+│     │  │  ├─ realesrgan_dataset.py
+│     │  │  └─ realesrgan_paired_dataset.py
+│     │  ├─ models/
+│     │  │  ├─ __init__.py
+│     │  │  ├─ realesrgan_model.py
+│     │  │  └─ realesrnet_model.py
+│     │  ├─ __init__.py
+│     │  ├─ train.py
+│     │  ├─ utils.py
+│     │  └─ version.py
+│     ├─ realesrgan.egg-info/
+│     │  ├─ dependency_links.txt
+│     │  ├─ not-zip-safe
+│     │  ├─ PKG-INFO
+│     │  ├─ requires.txt
+│     │  ├─ SOURCES.txt
+│     │  └─ top_level.txt
+│     ├─ scripts/
+│     │  ├─ extract_subimages.py
+│     │  ├─ generate_meta_info_pairdata.py
+│     │  ├─ generate_meta_info.py
+│     │  ├─ generate_multiscale_DF2K.py
+│     │  └─ pytorch2onnx.py
+│     ├─ tests/
+│     │  ├─ data/
+│     │  │  ├─ gt/
+│     │  │  │  ├─ baboon.png
+│     │  │  │  └─ comic.png
+│     │  │  ├─ gt.lmdb/
+│     │  │  │  ├─ data.mdb
+│     │  │  │  ├─ lock.mdb
+│     │  │  │  └─ meta_info.txt
+│     │  │  ├─ lq/
+│     │  │  │  ├─ baboon.png
+│     │  │  │  └─ comic.png
+│     │  │  ├─ lq.lmdb/
+│     │  │  │  ├─ data.mdb
+│     │  │  │  ├─ lock.mdb
+│     │  │  │  └─ meta_info.txt
+│     │  │  ├─ meta_info_gt.txt
+│     │  │  ├─ meta_info_pair.txt
+│     │  │  ├─ test_realesrgan_dataset.yml
+│     │  │  ├─ test_realesrgan_model.yml
+│     │  │  ├─ test_realesrgan_paired_dataset.yml
+│     │  │  └─ test_realesrnet_model.yml
+│     │  ├─ test_dataset.py
+│     │  ├─ test_discriminator_arch.py
+│     │  ├─ test_model.py
+│     │  └─ test_utils.py
+│     ├─ weights/
+│     │  └─ README.md
+│     ├─ .gitignore
+│     ├─ .pre-commit-config.yaml
+│     ├─ CODE_OF_CONDUCT.md
+│     ├─ cog_predict.py
+│     ├─ cog.yaml
+│     ├─ inference_realesrgan_video.py
+│     ├─ inference_realesrgan.py
+│     ├─ LICENSE
+│     ├─ MANIFEST.in
+│     ├─ README_CN.md
+│     ├─ README.md
+│     ├─ requirements.txt
+│     ├─ setup.cfg
+│     ├─ setup.py
+│     └─ VERSION
+├─ .gitignore
+└─ README.md
