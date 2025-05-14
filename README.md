@@ -117,7 +117,7 @@ uvicorn main:app --reload
 
 | Input Image (Low-Res)          | Output Image (Super-Res)         |
 | ------------------------------ | -------------------------------- |
-| ![Input](./examples/input.jpg) | ![Output](./examples/output.jpg) |
+| ![Input](./examples/input.png) | ![Output](./examples/output.png) |
 
 > (Optional: Add example images in an `examples/` folder)
 
