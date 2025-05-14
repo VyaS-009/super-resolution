@@ -161,7 +161,7 @@ This project is open-source and available under the **MIT License**.
 
 Have feedback, questions, or want to collaborate?
 
-📧 [your.email@example.com](mailto:vedavyas1014@gmail.com)  
+📧 [vedavyas1014@gmail.com](mailto:vedavyas1014@gmail.com)  
 🔗 [LinkedIn](https://www.linkedin.com/in/vedavyas-viswanatham-3769a2219/) | [GitHub](https://github.com/VyaS-009)
 
 ---
